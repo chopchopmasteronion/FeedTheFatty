@@ -12,7 +12,8 @@ public class gameScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+
 	}
 
 
@@ -31,5 +32,17 @@ public class gameScript : MonoBehaviour {
 		GUIStyle style = new GUIStyle();
 		style.fontSize = 10;
 		GUI.Label(new Rect(0,0,100,20), "Score:" + score + "\r\n" + "Health:" + health, style);	
+	}
+
+	void PauseGame()
+	{
+		if (Time.timeScale == 1) 
+		{
+			Time.timeScale = 0;
+		} 
+		else 
+		{
+			Time.timeScale = 1;
+		}
 	}
 }
