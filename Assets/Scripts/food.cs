@@ -68,4 +68,10 @@ public class food : MonoBehaviour {
 		}
 		transform.Translate (Vector3.up * (launchSpeed * Time.deltaTime));
 	}
+
+	//returns the type of food
+	public int getType()
+	{
+		return type;
+	}
 }

@@ -4,6 +4,7 @@ using System.Collections;
 public class isMouth : MonoBehaviour {
 	public isMouth mouth;
 	public gameScript game;
+	private GameObject eatMe;
 	// Use this for initialization
 	void Start () {
 	
@@ -18,8 +19,13 @@ public class isMouth : MonoBehaviour {
 	{
 		if(other.gameObject.name == "food(Clone)")
 		{
+			food eat = (food)other.gameObject.GetComponent(typeof(food));
+			if(0 == eat.getType())
+			{
+				game.updateScore();
+			}
 			Destroy(other.gameObject);
-			game.updateScore();
+
 		}
 	}
 }
