@@ -2,9 +2,8 @@
 using System.Collections;
 
 public class isMouth : MonoBehaviour {
-	public food food;
-	public static int score = 0; //score for the game
 	public isMouth mouth;
+	public gameScript game;
 	// Use this for initialization
 	void Start () {
 	
@@ -20,21 +19,7 @@ public class isMouth : MonoBehaviour {
 		if(other.gameObject.name == "food(Clone)")
 		{
 			Destroy(other.gameObject);
-			updateScoreBy(+1);
+			game.updateScore();
 		}
-
-	}
-
-	//function that updates the score. public so other classes can call it
-	public void updateScoreBy(int deltaScore) 
-	{
-		isMouth.score += deltaScore;
-	}
-	
-	//create the gui for the game
-	void OnGUI() {
-		GUIStyle style = new GUIStyle();
-		style.fontSize = 10;
-		GUI.Label(new Rect(0,0,100,20), "Score:"+isMouth.score, style );	
 	}
 }
