@@ -24,6 +24,10 @@ public class isMouth : MonoBehaviour {
 			{
 				game.updateScore();
 			}
+			else
+			{
+				game.ateHealthy();
+			}
 			Destroy(other.gameObject);
 
 		}
