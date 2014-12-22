@@ -6,13 +6,16 @@ public class gameScript : MonoBehaviour {
 	static int health;
 	static float timer; //timer decreases over time
 	public Camera main;
+	public int difficulty; //0-10
+	int eatenCount;
 	// Use this for initialization
 	void Start () {
-		score = 0;
+		score = 200;
 		health = 3;
 		timer = 20;
 		setCamera(1);
 		Time.timeScale = 1;
+		eatenCount = 0;
 	}
 	
 	// Update is called once per frame
@@ -22,13 +25,15 @@ public class gameScript : MonoBehaviour {
 			{
 				Application.LoadLevel("GameOver");
 			}
+		setDifficulty();
 	}
 
 
-	public void updateScore()
+	public void updateScore(int weight)
 	{
-		score++;
+		score+= weight;
 		timer+=2;
+		eatenCount++;
 	}
 
 	public void ateHealthy()
@@ -40,7 +45,7 @@ public class gameScript : MonoBehaviour {
 	void OnGUI() {
 		GUIStyle style = new GUIStyle();
 		style.fontSize = 10;
-		GUI.Label(new Rect(0,0,100,20), "Score:" + score + "\r\n" + "Health:" + health + "\r\n" +  "Timer:" + timer, style);	
+		GUI.Label(new Rect(0,0,100,20), "Weight:" + score + " LBS" + "\r\n" + "Health:" + health + "\r\n" +  "Timer:" + timer, style);	
 	}
 
 	void PauseGame()
@@ -66,6 +71,7 @@ public class gameScript : MonoBehaviour {
 	{
 		timer -= Time.deltaTime;
 	}
+
 	int GameOver()
 	{
 		int status = 1; //game running
@@ -75,6 +81,7 @@ public class gameScript : MonoBehaviour {
 		}
 		return status;
 	}
+
 	void setCamera(int location)
 	{
 		if(location == 1) //set to game position
@@ -85,5 +92,22 @@ public class gameScript : MonoBehaviour {
 		{
 			main.camera.transform.position = (new Vector3(-29,0,-1));
 		}
+	}
+
+	void setDifficulty()
+	{
+		if(difficulty < 5)
+		{
+			if(eatenCount== 10)
+			{
+				difficulty++;
+				eatenCount = 0;
+			}
+		}
+	}
+	
+	public int getDifficulty()
+	{
+		return difficulty;
 	}	
 }

@@ -6,17 +6,20 @@ public class food : MonoBehaviour {
 	int direction; //-1 is left 1 is right
 	int touched = 0; //0 is not touched, 1 is touched
 	int conveyer; //-1 is bottom 1 is top
+	int weight;
 	public int speed; //speed of the object moving accross the conveyer belt
 	public int launchSpeed; //speed when launched
 	public Material materialFatty;
 
 	// Use this for initialization
 	void Start () {
+		weight = 0;
 		//check if fatty
 		if (7 > Random.Range (0, 9)) 
 		{
 			type = 0;
 			this.renderer.material = materialFatty;
+			weight = (Random.Range(1,5));
 		}
 		//find which conveyer is on		
 		if (0 > transform.position.y)
@@ -56,7 +59,9 @@ public class food : MonoBehaviour {
 		{
 			Destroy(this.gameObject);
 		}
-		transform.Translate (Vector3.right * (speed * Time.deltaTime));
+		gameScript gameDiff = (gameScript)GameObject.Find("Main Camera").GetComponent(typeof (gameScript));
+		print(gameDiff.getDifficulty());
+		transform.Translate (Vector3.right * ((gameDiff.getDifficulty() + speed) * Time.deltaTime));
 	}
 
 	//Launch sends the food towards the center
@@ -73,5 +78,10 @@ public class food : MonoBehaviour {
 	public int getType()
 	{
 		return type;
+	}
+	
+	public int getWeight()
+	{
+		return weight;
 	}
 }
