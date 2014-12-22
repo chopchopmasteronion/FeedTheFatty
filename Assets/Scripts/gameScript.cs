@@ -34,6 +34,8 @@ public class gameScript : MonoBehaviour {
 		score+= weight;
 		timer+=2;
 		eatenCount++;
+		fatty guy = (fatty)GameObject.Find("body").GetComponent(typeof (fatty));
+		guy.grow();
 	}
 
 	public void ateHealthy()

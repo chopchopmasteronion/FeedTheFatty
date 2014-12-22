@@ -60,7 +60,6 @@ public class food : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 		gameScript gameDiff = (gameScript)GameObject.Find("Main Camera").GetComponent(typeof (gameScript));
-		print(gameDiff.getDifficulty());
 		transform.Translate (Vector3.right * ((gameDiff.getDifficulty() + speed) * Time.deltaTime));
 	}
 
