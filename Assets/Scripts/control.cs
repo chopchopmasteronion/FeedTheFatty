@@ -28,6 +28,16 @@ public class control : MonoBehaviour {
 				{
 					game.SendMessage("PauseGame");
 				}
+				//Resume game logic
+				if("play_button" == hit.collider.name)
+				{
+					game.SendMessage("PauseGame");
+				}				
+				//Restart game logic
+				if("restart_button" == hit.collider.name)
+				{
+					game.SendMessage("RestartGame");
+				}
 			}
 
 		}

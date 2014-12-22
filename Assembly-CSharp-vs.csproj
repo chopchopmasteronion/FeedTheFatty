@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\control.cs" />
      <Compile Include="Assets\Scripts\fatty.cs" />
      <Compile Include="Assets\Scripts\food.cs" />
+     <Compile Include="Assets\Scripts\gameOver.cs" />
      <Compile Include="Assets\Scripts\gameScript.cs" />
      <Compile Include="Assets\Scripts\isMouth.cs" />
      <Compile Include="Assets\Scripts\spawner.cs" />
