@@ -44,11 +44,9 @@ public class isMouth : MonoBehaviour {
 		switch (direction)
 		{
 		case 0: 
-			print ("left");
 			transform.Translate (Vector3.left * (speed * Time.deltaTime));
 			break;
 		case 1:	
-			print ("right");
 			transform.Translate (Vector3.right * (speed * Time.deltaTime));
 			break;
 		}

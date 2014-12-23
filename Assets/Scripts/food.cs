@@ -9,17 +9,17 @@ public class food : MonoBehaviour {
 	int weight;
 	public int speed; //speed of the object moving accross the conveyer belt
 	public int launchSpeed; //speed when launched
-	public Material materialFatty;
+	public Sprite[] fatFoods;
 
 	// Use this for initialization
 	void Start () {
+		//fatFoods = Resources.LoadAll<Sprite>("foods");
 		weight = 0;
 		//check if fatty
 		if (7 > Random.Range (0, 9)) 
 		{
 			type = 0;
-			this.renderer.material = materialFatty;
-			weight = (Random.Range(1,5));
+			SetWeight();
 		}
 		//find which conveyer is on		
 		if (0 > transform.position.y)
@@ -82,5 +82,30 @@ public class food : MonoBehaviour {
 	public int getWeight()
 	{
 		return weight;
+	}
+	
+	void SetWeight()
+	{
+		weight = (Random.Range(1,5));
+		switch (weight)
+		{
+		case 1:
+			GetComponent<SpriteRenderer>().sprite= fatFoods[1];
+			break;
+		case 2:
+			GetComponent<SpriteRenderer>().sprite= fatFoods[0];
+			break;
+		case 3:
+			GetComponent<SpriteRenderer>().sprite= fatFoods[4];
+			break;
+		case 4:
+			GetComponent<SpriteRenderer>().sprite= fatFoods[3];
+			break;
+		case 5:
+			GetComponent<SpriteRenderer>().sprite= fatFoods[2];
+			break;
+		}
+		
+
 	}
 }
