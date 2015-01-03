@@ -2,11 +2,10 @@
 -target:library
 -nowarn:0169
 -out:'Temp/Assembly-CSharp.dll'
--r:'/Applications/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll'
--r:'/Applications/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll'
--r:'/Applications/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
--define:UNITY_4_6_1
--define:UNITY_4_6
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
+-define:UNITY_4_5_5
+-define:UNITY_4_5
 -define:UNITY_STANDALONE_WIN
 -define:ENABLE_MICROPHONE
 -define:ENABLE_TEXTUREID_MAP
@@ -22,7 +21,6 @@
 -define:ENABLE_MOVIES
 -define:ENABLE_WWW
 -define:ENABLE_IMAGEEFFECTS
--define:ENABLE_4_6_FEATURES
 -define:INCLUDE_WP_BLUE_SUPPORT
 -define:ENABLE_WEBCAM
 -define:INCLUDE_METROSUPPORT
@@ -47,5 +45,5 @@
 'Assets/Scripts/gameScript.cs'
 'Assets/Scripts/isMouth.cs'
 'Assets/Scripts/spawner.cs'
--r:'/Applications/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
--r:'/Applications/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'
