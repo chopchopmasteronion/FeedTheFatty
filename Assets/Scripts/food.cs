@@ -87,7 +87,7 @@ public class food : MonoBehaviour {
 		if(type == 1)
 		{
 			//set speed based on difficulty
-			if (-10 > transform.position.x) 
+			if (10 < transform.position.x) 
 			{
 				Destroy(this.gameObject);
 			}
