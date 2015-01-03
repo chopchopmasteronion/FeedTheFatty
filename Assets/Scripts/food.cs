@@ -36,12 +36,30 @@ public class food : MonoBehaviour {
 	void Update () 
 	{
 		if (touched == 0) 
-		{
-			Ride ();
+		{	
+			//if the tag is top then ride to the right
+			if(this.gameObject.tag == "Top")
+			{
+				Ride (1);
+			}
+			else
+			{
+				//if tag is not top ride to the right
+				Ride (0);
+			}
 		}
 		else 
 		{
-			Launch();
+			//if tag is top then launch down
+			if(this.gameObject.tag == "Top")
+			{
+				Launch(1);
+			}
+			else
+			{
+				//if tag is not top then launch up
+				Launch (0);
+			}
 		}
 	}
 
@@ -52,25 +70,53 @@ public class food : MonoBehaviour {
 	}
 
 	//Ride provides a means of transport for food
-	void Ride()
+	void Ride(int type)
 	{
-		//set speed based on difficulty
-		if (10 < transform.position.x) 
+		//move bottom foods to the right
+		if(type == 0)
 		{
-			Destroy(this.gameObject);
+			//set speed based on difficulty
+			if (10 < transform.position.x) 
+			{
+				Destroy(this.gameObject);
+			}
+			gameScript gameDiff = (gameScript)GameObject.Find("Main Camera").GetComponent(typeof (gameScript));
+			transform.Translate (Vector3.right * ((gameDiff.getDifficulty() + speed) * Time.deltaTime));
 		}
-		gameScript gameDiff = (gameScript)GameObject.Find("Main Camera").GetComponent(typeof (gameScript));
-		transform.Translate (Vector3.right * ((gameDiff.getDifficulty() + speed) * Time.deltaTime));
+		//move top foods to the left
+		if(type == 1)
+		{
+			//set speed based on difficulty
+			if (10 < transform.position.x) 
+			{
+				Destroy(this.gameObject);
+			}
+			gameScript gameDiff = (gameScript)GameObject.Find("Main Camera").GetComponent(typeof (gameScript));
+			transform.Translate (Vector3.left * ((gameDiff.getDifficulty() + speed) * Time.deltaTime));
+		}
 	}
 
 	//Launch sends the food towards the center
-	void Launch()
+	void Launch(int type)
 	{
-		if (0 < transform.position.y) 
+		//tag is bottom so we need to launch up
+		if(type == 0)
 		{
-			Destroy(this.gameObject);
+			if (0 < transform.position.y) 
+			{
+				Destroy(this.gameObject);
+			}
+			transform.Translate (Vector3.up * (launchSpeed * Time.deltaTime));
 		}
-		transform.Translate (Vector3.up * (launchSpeed * Time.deltaTime));
+		//tag is top so we need to launch down
+		if(type == 1)
+		{
+			if (0 > transform.position.y) 
+			{
+				Destroy(this.gameObject);
+			}
+			transform.Translate (Vector3.down * (launchSpeed * Time.deltaTime));
+		}
 	}
 
 	//returns the type of food
