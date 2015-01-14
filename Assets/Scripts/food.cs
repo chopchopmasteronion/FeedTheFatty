@@ -82,6 +82,7 @@ public class food : MonoBehaviour {
 			}
 			gameScript gameDiff = (gameScript)GameObject.Find("Main Camera").GetComponent(typeof (gameScript));
 			transform.Translate (Vector3.right * ((gameDiff.getDifficulty() + speed) * Time.deltaTime));
+			
 		}
 		//move top foods to the left
 		if(type == 1)
@@ -106,7 +107,8 @@ public class food : MonoBehaviour {
 			{
 				Destroy(this.gameObject);
 			}
-			transform.Translate (Vector3.up * (launchSpeed * Time.deltaTime));
+			transform.Translate(Vector3.up * (launchSpeed * Time.deltaTime), Space.World);
+			transform.Rotate(0, 0, 360 * Time.deltaTime);
 		}
 		//tag is top so we need to launch down
 		if(type == 1)
@@ -115,7 +117,8 @@ public class food : MonoBehaviour {
 			{
 				Destroy(this.gameObject);
 			}
-			transform.Translate (Vector3.down * (launchSpeed * Time.deltaTime));
+			transform.Translate (Vector3.down * (launchSpeed * Time.deltaTime), Space.World);
+			transform.Rotate(0, 0, -360 * Time.deltaTime);
 		}
 	}
 
