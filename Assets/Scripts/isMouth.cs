@@ -7,6 +7,7 @@ public class isMouth : MonoBehaviour {
 	public int speed;
 	public float moveTime;
 	int direction;
+	public GameObject crumbsplosion;
 	// Use this for initialization
 	void Start () 
 {
@@ -36,6 +37,7 @@ public class isMouth : MonoBehaviour {
 				game.ateHealthy();
 			}
 			Destroy(other.gameObject);
+			Instantiate(crumbsplosion, transform.position, Quaternion.identity);
 
 		}
 	}

@@ -29,7 +29,7 @@ public class spawner : MonoBehaviour {
 				topClone.tag = "Top"; //tag the food top so we can identify it later
 				}
 			//always instantiate food on the bottom conveyor belt
-			bottomClone = Instantiate (food, new Vector3(-10f, -3f, -.5f), Quaternion.identity) as GameObject;
+			bottomClone = Instantiate (food, new Vector3(-10f, -4.1f, -.5f), Quaternion.identity) as GameObject;
 			bottomClone.tag = "Bottom"; 
 			timer=0; //reset timer
 			}

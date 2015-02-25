@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class gameScript : MonoBehaviour {
@@ -8,6 +9,11 @@ public class gameScript : MonoBehaviour {
 	public Camera main;
 	public int difficulty; //0-10
 	int eatenCount;
+	public GameObject heart;
+	public Sprite[] hearts;
+	public Text clock;
+	public Text scale;
+
 	// Use this for initialization
 	void Start () {
 		score = 200;
@@ -41,10 +47,17 @@ public class gameScript : MonoBehaviour {
 	public void ateHealthy()
 	{
 		health--;
+		if (health > 0)
+		{ 
+		heart.GetComponent<SpriteRenderer>().sprite=hearts[health-1];
+		}
 	}
 
 	//create the gui for the game
 	void OnGUI() {
+		int intTimer = (int)timer;
+		scale.text = score.ToString();
+		clock.text = intTimer.ToString(); 
 		GUIStyle style = new GUIStyle();
 		style.fontSize = 10;
 		GUI.Label(new Rect(0,0,100,20), "Weight:" + score + " LBS" + "\r\n" + "Health:" + health + "\r\n" +  "Timer:" + timer, style);	
@@ -112,4 +125,6 @@ public class gameScript : MonoBehaviour {
 	{
 		return difficulty;
 	}	
+
+
 }

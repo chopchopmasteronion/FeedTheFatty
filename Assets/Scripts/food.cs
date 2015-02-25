@@ -11,6 +11,7 @@ public class food : MonoBehaviour {
 	public int launchSpeed; //speed when launched
 	public Sprite[] fatFoods;
 
+
 	// Use this for initialization
 	void Start () {
 		//fatFoods = Resources.LoadAll<Sprite>("foods");
