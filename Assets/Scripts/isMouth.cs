@@ -8,6 +8,8 @@ public class isMouth : MonoBehaviour {
 	public float moveTime;
 	int direction;
 	public GameObject crumbsplosion;
+	public AudioClip fart;
+	public AudioClip ralph;
 	// Use this for initialization
 	void Start () 
 {
@@ -31,10 +33,12 @@ public class isMouth : MonoBehaviour {
 			if(0 == eat.getType())
 			{
 				game.updateScore(eat.getWeight());
+				audio.PlayOneShot(fart);
 			}
 			else
 			{
 				game.ateHealthy();
+				audio.PlayOneShot(ralph);
 			}
 			Destroy(other.gameObject);
 			Instantiate(crumbsplosion, transform.position, Quaternion.identity);

@@ -1,13 +1,15 @@
 fileFormatVersion: 2
-guid: 55482968268183b4c902e6fbc6846094
+guid: db0d6342c01efe34e94e2b3fe8d4c63f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet_0
-    21300002: spritesheet_1
-    21300004: spritesheet_2
-    21300006: spritesheet_3
-    21300008: spritesheet_4
-    21300010: spritesheet_5
+    21300000: fattysprite_0
+    21300002: fattysprite_1
+    21300004: fattysprite_2
+    21300006: fattysprite_3
+    21300008: fattysprite_4
+    21300010: fattysprite_5
+    21300012: fattysprite_6
+    21300014: fattysprite_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -49,65 +51,85 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: spritesheet_0
+    - name: fattysprite_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 118
-        width: 93
-        height: 94
+        x: 18
+        y: 39
+        width: 836
+        height: 808
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spritesheet_1
+    - name: fattysprite_1
       rect:
         serializedVersion: 2
-        x: 115
-        y: 115
-        width: 100
-        height: 100
+        x: 911
+        y: 4
+        width: 731
+        height: 896
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spritesheet_2
+    - name: fattysprite_2
       rect:
         serializedVersion: 2
-        x: 226
-        y: 115
-        width: 99
-        height: 95
+        x: 1818
+        y: 25
+        width: 829
+        height: 843
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spritesheet_3
+    - name: fattysprite_3
       rect:
         serializedVersion: 2
-        x: 7
-        y: 8
-        width: 95
-        height: 95
+        x: 2760
+        y: 109
+        width: 829
+        height: 752
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spritesheet_4
+    - name: fattysprite_4
       rect:
         serializedVersion: 2
-        x: 129
-        y: 19
-        width: 69
-        height: 78
+        x: 3604
+        y: 74
+        width: 843
+        height: 745
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: spritesheet_5
+    - name: fattysprite_5
       rect:
         serializedVersion: 2
-        x: 242
-        y: 5
-        width: 63
-        height: 98
+        x: 4574
+        y: 32
+        width: 759
+        height: 857
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-  spritePackingTag: food
+    - name: fattysprite_6
+      rect:
+        serializedVersion: 2
+        x: 5495
+        y: 144
+        width: 710
+        height: 752
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fattysprite_7
+      rect:
+        serializedVersion: 2
+        x: 6486
+        y: 95
+        width: 485
+        height: 717
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
   userData: 

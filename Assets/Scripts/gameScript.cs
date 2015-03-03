@@ -8,6 +8,7 @@ public class gameScript : MonoBehaviour {
 	static float timer; //timer decreases over time
 	public Camera main;
 	public int difficulty; //0-10
+	private int diffScale;
 	int eatenCount;
 	public GameObject heart;
 	public Sprite[] hearts;
@@ -22,6 +23,7 @@ public class gameScript : MonoBehaviour {
 		setCamera(1);
 		Time.timeScale = 1;
 		eatenCount = 0;
+		diffScale = Random.Range(1,5);
 	}
 	
 	// Update is called once per frame
@@ -111,9 +113,9 @@ public class gameScript : MonoBehaviour {
 
 	void setDifficulty()
 	{
-		if(difficulty < 5)
+		if(difficulty < 10)
 		{
-			if(eatenCount== 10)
+			if(eatenCount== 10 - diffScale)
 			{
 				difficulty++;
 				eatenCount = 0;

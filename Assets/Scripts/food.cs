@@ -10,17 +10,19 @@ public class food : MonoBehaviour {
 	public int speed; //speed of the object moving accross the conveyer belt
 	public int launchSpeed; //speed when launched
 	public Sprite[] fatFoods;
+	public AudioClip splat;
 
 
 	// Use this for initialization
 	void Start () {
 		//fatFoods = Resources.LoadAll<Sprite>("foods");
 		weight = 0;
+		SetWeight(0);
 		//check if fatty
 		if (7 > Random.Range (0, 9)) 
 		{
 			type = 0;
-			SetWeight();
+			SetWeight(1);
 		}
 		//find which conveyer is on		
 		if (0 > transform.position.y)
@@ -106,7 +108,8 @@ public class food : MonoBehaviour {
 		{
 			if (0 < transform.position.y) 
 			{
-				Destroy(this.gameObject);
+				this.destroy();
+				
 			}
 			transform.Translate(Vector3.up * (launchSpeed * Time.deltaTime), Space.World);
 			transform.Rotate(0, 0, 360 * Time.deltaTime);
@@ -116,11 +119,17 @@ public class food : MonoBehaviour {
 		{
 			if (0 > transform.position.y) 
 			{
-				Destroy(this.gameObject);
+				this.destroy();
 			}
 			transform.Translate (Vector3.down * (launchSpeed * Time.deltaTime), Space.World);
 			transform.Rotate(0, 0, -360 * Time.deltaTime);
 		}
+	}
+	
+	void destroy()
+	{
+		audio.PlayOneShot(splat);
+		Destroy(this.gameObject);
 	}
 
 	//returns the type of food
@@ -134,26 +143,57 @@ public class food : MonoBehaviour {
 		return weight;
 	}
 	
-	void SetWeight()
+	void SetWeight(int choice)
 	{
-		weight = (Random.Range(1,5));
-		switch (weight)
+		if(choice == 1)
 		{
-		case 1:
-			GetComponent<SpriteRenderer>().sprite= fatFoods[1];
-			break;
-		case 2:
-			GetComponent<SpriteRenderer>().sprite= fatFoods[0];
-			break;
-		case 3:
-			GetComponent<SpriteRenderer>().sprite= fatFoods[4];
-			break;
-		case 4:
-			GetComponent<SpriteRenderer>().sprite= fatFoods[3];
-			break;
-		case 5:
-			GetComponent<SpriteRenderer>().sprite= fatFoods[2];
-			break;
+
+			weight = (Random.Range(1,8));
+			switch (weight)
+			{
+			case 1:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[1];
+				break;
+			case 2:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[0];
+				break;
+			case 3:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[4];
+				break;
+			case 4:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[3];
+				break;
+			case 5:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[2];
+				break;
+			case 6:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[5];
+				break;
+			case 7:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[6];
+				break;
+			case 8:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[7];
+				break;
+			}
+		} else {
+			
+			weight = (Random.Range(9,12));
+			switch (weight)
+			{
+			case 9:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[10];
+				break;
+			case 10:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[11];
+				break;
+			case 11:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[8];
+				break;
+			case 12:
+				GetComponent<SpriteRenderer>().sprite= fatFoods[9];
+				break;
+			}
 		}
 		
 

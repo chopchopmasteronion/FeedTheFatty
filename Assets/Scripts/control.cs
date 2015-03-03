@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class control : MonoBehaviour {
+
+	public AudioClip pop;
 	public gameScript game;
 	// Use this for initialization
 	void Start () {
@@ -21,6 +23,7 @@ public class control : MonoBehaviour {
 				if("food(Clone)" == hit.collider.name)
 				{
 					GameObject food = hit.collider.gameObject;
+					audio.PlayOneShot(pop);
 					food.SendMessage("Touch");
 				}
 				//Pause game logic
