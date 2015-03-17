@@ -14,6 +14,7 @@ public class control : MonoBehaviour {
 	void Update () {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit = new RaycastHit();
+		if(Time.timeScale==1){
 		if(Input.GetMouseButtonDown(0)) 
 		{
 			//Touch logic
@@ -26,23 +27,8 @@ public class control : MonoBehaviour {
 					audio.PlayOneShot(pop);
 					food.SendMessage("Touch");
 				}
-				//Pause game logic
-				if("pause_button" == hit.collider.name)
-				{
-					game.SendMessage("PauseGame");
-				}
-				//Resume game logic
-				if("play_button" == hit.collider.name)
-				{
-					game.SendMessage("PauseGame");
-				}				
-				//Restart game logic
-				if("restart_button" == hit.collider.name)
-				{
-					game.SendMessage("RestartGame");
-				}
 			}
-
+			}
 		}
 	}
 }

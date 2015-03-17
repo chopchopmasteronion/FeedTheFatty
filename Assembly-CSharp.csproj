@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\gameScript.cs" />
      <Compile Include="Assets\Scripts\garbage.cs" />
      <Compile Include="Assets\Scripts\isMouth.cs" />
+     <Compile Include="Assets\Scripts\mainMenu.cs" />
      <Compile Include="Assets\Scripts\spawner.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.IO;
 
 public class gameScript : MonoBehaviour {
 	static int score;
@@ -55,34 +56,36 @@ public class gameScript : MonoBehaviour {
 		}
 	}
 
-	//create the gui for the game
+	//This was great, that's all I'm gonna say...
 	void OnGUI() {
 		int intTimer = (int)timer;
 		scale.text = score.ToString();
-		clock.text = intTimer.ToString(); 
-		GUIStyle style = new GUIStyle();
-		style.fontSize = 10;
-		GUI.Label(new Rect(0,0,100,20), "Weight:" + score + " LBS" + "\r\n" + "Health:" + health + "\r\n" +  "Timer:" + timer, style);	
+		clock.text = intTimer.ToString(); 	
 	}
 
-	void PauseGame()
+	public void PauseGame()
 	{
 		if (Time.timeScale == 1) 
 		{
 			Time.timeScale = 0;
-			setCamera(2);
+
 		} 
 		else 
 		{
 			Time.timeScale = 1;
-			setCamera(1);
 		}
 	}
 
-	void RestartGame()
+	public void RestartGame()
 	{
 		Application.LoadLevel("FattyGame");
 	}
+
+	public void ReturnMenu()
+	{
+		Application.LoadLevel("Menu");
+	}
+	
 	
 	void CountDown()
 	{
