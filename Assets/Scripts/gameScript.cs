@@ -19,7 +19,7 @@ public class gameScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		score = 200;
-		health = 3;
+		health = 1;
 		timer = 20;
 		setCamera(1);
 		Time.timeScale = 1;
@@ -32,6 +32,8 @@ public class gameScript : MonoBehaviour {
 		CountDown();
 		if(0 == GameOver ())
 			{
+				persistence ps = new persistence();
+				ps.saveScore(score);
 				Application.LoadLevel("GameOver");
 			}
 		setDifficulty();

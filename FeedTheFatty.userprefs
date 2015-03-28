@@ -1,6 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\persistence.cs">
+    <Files>
+      <File FileName="Assets\Scripts\persistence.cs" Line="11" Column="30" />
+      <File FileName="Assets\Scripts\gameScript.cs" Line="36" Column="25" />
+      <File FileName="Assets\Scripts\gameOver.cs" Line="11" Column="34" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
