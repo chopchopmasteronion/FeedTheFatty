@@ -13,9 +13,6 @@ public class gameOver : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.anyKeyDown) {
-			Application.LoadLevel("FattyGame");
-		}
 
 	}
 }
