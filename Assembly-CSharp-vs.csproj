@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\HighScore.cs" />
+     <Compile Include="Assets\Scripts\Rounds.cs" />
      <Compile Include="Assets\Scripts\control.cs" />
      <Compile Include="Assets\Scripts\fatty.cs" />
      <Compile Include="Assets\Scripts\food.cs" />

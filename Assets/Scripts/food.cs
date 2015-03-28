@@ -2,10 +2,11 @@
 using System.Collections;
 
 public class food : MonoBehaviour {
-	int type = 1; //0 is fatty 1 is healthy 
+	public int type; //0 is fatty 1 is healthy 
 	int direction; //-1 is left 1 is right
 	int touched = 0; //0 is not touched, 1 is touched
 	int weight;
+	public bool bigFood;
 	public int speed; //speed of the object moving accross the conveyer belt
 	public int launchSpeed; //speed when launched
 	public Sprite[] fatFoods;
@@ -14,10 +15,11 @@ public class food : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		type = 1;
 		weight = 0;
 		SetWeight(0);
 		//check if fatty
-		if (7 > Random.Range (0, 9)) 
+		if (7 > Random.Range (0, 9)) //set food as healthy
 		{
 			type = 0;
 			SetWeight(1);
@@ -130,6 +132,8 @@ public class food : MonoBehaviour {
 	{
 		return weight;
 	}
+
+
 	
 	void SetWeight(int choice)
 	{

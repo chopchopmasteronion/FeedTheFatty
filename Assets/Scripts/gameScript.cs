@@ -19,7 +19,7 @@ public class gameScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		score = 200;
-		health = 1;
+		health = 3;
 		timer = 20;
 		setCamera(1);
 		Time.timeScale = 1;

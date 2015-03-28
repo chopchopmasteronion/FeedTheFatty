@@ -5,11 +5,13 @@ public class spawner : MonoBehaviour {
 	public GameObject food;
 	public float spawnTime;
 	private float timer;
+	public bool bigFood;
 
 	public GameObject topClone; //top clone of our instantiated prefab food
 	public GameObject bottomClone; //bottom clone of our instantiated prefab food
 	// Use this for initialization
 	void Start () {
+		bigFood=true;
 	}
 	
 	// Update is called once per frame
@@ -27,11 +29,21 @@ public class spawner : MonoBehaviour {
 				//instantiate food on the top
 				topClone = Instantiate (food, new Vector3(10f, 3f, -.5f), Quaternion.identity) as GameObject;
 				topClone.tag = "Top"; //tag the food top so we can identify it later
-				}
+			}
 			//always instantiate food on the bottom conveyor belt
 			bottomClone = Instantiate (food, new Vector3(-10f, -4.1f, -.5f), Quaternion.identity) as GameObject;
 			bottomClone.tag = "Bottom"; 
 			timer=0; //reset timer
 			}
+	}
+
+	public void setBigFood()
+	{
+		{
+			if(bigFood==false)
+				bigFood=true;
+			else
+				bigFood=false;
+		}
 	}
 }
