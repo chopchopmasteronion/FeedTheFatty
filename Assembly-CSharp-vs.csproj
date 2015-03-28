@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\HighScore.cs" />
      <Compile Include="Assets\Scripts\control.cs" />
      <Compile Include="Assets\Scripts\fatty.cs" />
      <Compile Include="Assets\Scripts\food.cs" />
@@ -54,6 +55,7 @@
      <Compile Include="Assets\Scripts\garbage.cs" />
      <Compile Include="Assets\Scripts\isMouth.cs" />
      <Compile Include="Assets\Scripts\mainMenu.cs" />
+     <Compile Include="Assets\Scripts\menuFood.cs" />
      <Compile Include="Assets\Scripts\persistence.cs" />
      <Compile Include="Assets\Scripts\spawner.cs" />
  <Reference Include="UnityEngine.UI">
